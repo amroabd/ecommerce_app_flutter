@@ -8,7 +8,7 @@ Map userSchema = {
 };
 
 Map productSchema = {
-  "name": "User",
+  "name": "Product",
   "createTable": '''$createTable  Product (id INTEGER PRIMARY KEY, 
           name TEXT NOT NULL,
           image TEXT,
@@ -18,7 +18,7 @@ Map productSchema = {
 };
 
 Map cartSchema = {
-  "name": "User",
+  "name": "CartProducts",
   "createTable": '''$createTable CartProducts (id INTEGER PRIMARY KEY,
         name TEXT NOT NULL,
         image TEXT NOT NULL,
