@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/utils/date_util.dart';
+import 'package:ecommerce_app/core/util/date_util.dart';
 
 class User {
   int? id;
@@ -17,6 +17,17 @@ class User {
       this.image,
       this.age,
       this.createDate});
+
+  User.fromMap(Map json) {
+    id = json['id'];
+    firstname = json['firstName'];
+    lastname = json['lastName'];
+    maidenName = json['maidenName'];
+    image = json['image'];
+    age = json['age'];
+    createDate = DateUtil.getCurrentDateTime(); //json['createDate'];
+    //return User.name(id: id,firstname: firstname,maidenName: maidenName,lastname: lastname,image: image,age: age);
+  }
 
   User.fromJson(Map<String, dynamic> json) {
     id = json['id'];
