@@ -34,7 +34,7 @@ class LoginControllerImp extends LoginController {
   void showPassword() {
     isShowPassword = !isShowPassword;
     Log.printInfo("$isShowPassword");
-    update();
+    update(['viewPass']);
   }
 
   @override

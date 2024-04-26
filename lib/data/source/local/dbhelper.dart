@@ -19,8 +19,7 @@ class DbHelper {
   // open the database
   static Future<Database> openDb() async {
     String path = join(await getDatabasesPath(), 'my_ecommerce_db.db');
-    Database database = await openDatabase(path, version: 1,
-        onCreate: (Database db, int version) async {
+    Database database = await openDatabase(path, version: 1, onCreate: (Database db, int version) async {
       // When creating the db, create the table
       await createTables(db);
       Log.printInfo('DbHelper=> created tables db');
@@ -31,6 +30,7 @@ class DbHelper {
   static Future<void> createTables(Database db) async {
     // When creating the db, create the table
     await db.execute(userSchema['createTable']);
+    await db.execute(categorySchema['createTable']);
     await db.execute(productSchema['createTable']);
     await db.execute(cartSchema['createTable']);
   }
@@ -97,6 +97,8 @@ class DbHelper {
         await db.query(nameTable, columns: cols, where: where, whereArgs: [id]);
     return maps;
   }
+
+
 
 /*   Future<int> _rawInsert(String name, int value, num score) async {
     final db = await openDb();

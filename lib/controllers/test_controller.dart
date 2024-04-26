@@ -19,7 +19,7 @@ class TestController extends GetxController {
         //dataList.addAll(resp['users']);
         Log.printLog('TestController:getDataResult => dataSize:${dataList.length}');
       } catch (e) {
-        state = RequestState.empty;
+        state = RequestState.none;
         Log.printError("TestController:getDataResult => Result:left,MSG:$e");
       }
     }

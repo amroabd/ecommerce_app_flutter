@@ -109,7 +109,7 @@ class CRUDProcessData {
   }
 }
 
-enum RequestState { loading, success, failure, errorServer, notConnect, empty }
+enum RequestState { loading, success, failure, errorServer, notConnect, none }
 
 class MyRequestState {
   final String? data;

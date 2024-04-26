@@ -30,13 +30,13 @@ abstract class BaseController extends GetxController {
           onPressed: () {
             Get.back();
           },
-          child: const Text('cancel'),
+          child: const Text('ok'),
         ));
   }
 
   @override
   void onInit() {
-    myRequestState = MyRequestState('loading', RequestState.empty);
+    myRequestState = MyRequestState('none', RequestState.none);
     super.onInit();
   }
 }

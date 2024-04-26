@@ -12,24 +12,28 @@ class LoadDataView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return state == RequestState.notConnect
-        ? Center(
-            child: Lottie.asset(
-            AppImageAsset.notData,
-          ))
+        ? Center(child: Lottie.asset(AppImageAsset.notData,))
         : state == RequestState.loading
-            ? Center(
-                child: Lottie.asset(AppImageAsset.loading,
-                    height: 200, width: 200))
+            ? Center(child: Lottie.asset(AppImageAsset.loading, height: 200, width: 200))
             : state == RequestState.errorServer
-                ? Center(
-                    child: Lottie.asset(
-                    AppImageAsset.notData,
-                  ))
-                : state == RequestState.empty
-                    ? Center(
-                        child: Lottie.asset(
-                        AppImageAsset.notData,
-                      ))
+                ? Center(child: Lottie.asset(AppImageAsset.notData,))
+                : state == RequestState.none
+                    ? Center(child: Lottie.asset(AppImageAsset.notData,))
                     : widget;
+  }
+}
+
+
+class SendDataView extends StatelessWidget {
+  const SendDataView({super.key, required this.state, required this.widget});
+
+  final RequestState state;
+  final Widget widget;
+
+  @override
+  Widget build(BuildContext context) {
+    return state == RequestState.loading
+        ? Center(child: Lottie.asset(AppImageAsset.loading, height: 200, width: 200))
+        : widget;
   }
 }
